@@ -32,8 +32,8 @@ participant Farmer identified by farmerId extends Actor {
   o String farmerId
 }
 
-participant WarehouseKeeper identified by warehouseKeeperId extends Actor {
-  o String warehouseKeeperId
+participant Warehouseman identified by warehousemanId extends Actor {
+  o String warehousemanId
 }
 
 participant Distributor identified by distributorId extends Actor {
@@ -57,7 +57,7 @@ asset Product identified by productId {
   o String name
   o String variety
   o String quantity
-  o DateTime manufactured
+  // o DateTime manufactured
   o String harvestLocation
   
   --> Actor owner
@@ -71,20 +71,22 @@ asset Product identified by productId {
 asset Contract identified by contractId {
   o String contractId
   --> Farmer farmer
-  --> WarehouseKeeper warehouseKeeper
+  --> Warehouseman warehouseman
   --> Distributor distributor
-  --> Retailer retailActor
-  --> Product productActor
+  --> Retailer retailer
+  --> Product product
   o Double unitPrice
   o Double unitCount
-  o DateTime issuedDate
-  o DateTime dateOfPromise
+  // o DateTime issuedDate
+  // o DateTime dateOfPromise
 }
 
 transaction CreateProduct {
-  --> Product product
-  --> Farmer farmer
-  
+  // --> Product product
+  // --> Farmer farmer
+}
+
+transaction DummyData {
 }
 
 transaction CreateContract {

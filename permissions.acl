@@ -27,7 +27,7 @@ rule EverybodyCanSubmitTransactions {
     description: "Allow all participants to submit transactions"
     participant: "org.mahyco.farmtofork.Actor"
     operation: CREATE
-    resource: "org.mahyco.farmtofork.MoveProduct"
+    resource: "org.mahyco.farmtofork.CreateProduct"
     action: ALLOW
 }
 
