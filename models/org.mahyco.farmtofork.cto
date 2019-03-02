@@ -80,13 +80,16 @@ asset Contract identified by contractId {
   // o DateTime issuedDate
   // o DateTime dateOfPromise
 }
+transaction DummyData {
+}
 
 transaction CreateProduct {
   // --> Product product
   // --> Farmer farmer
-}
-
-transaction DummyData {
+  o String name
+  o String variety
+  o String quantity
+  o String harvestLocation
 }
 
 transaction CreateContract {
@@ -102,8 +105,3 @@ transaction statusUpdate {
   --> Distributor distributor
   --> Retailer retailActor
 }
-
-// event MoveProductEvent {
-//   --> Product product
-//   --> Actor newOwner
-// }
