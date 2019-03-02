@@ -70,14 +70,38 @@ asset Product identified by productId {
 
 asset Contract identified by contractId {
   o String contractId
+  --> Farmer farmer
+  --> WarehouseKeeper warehouseKeeper
+  --> Distributor distributor
+  --> Retailer retailActor
+  --> Product productActor
+  o Double unitPrice
+  o Double unitCount
+  o DateTime issuedDate
+  o DateTime dateOfPromise
 }
 
-transaction MoveProduct {
+transaction CreateProduct {
   --> Product product
-  --> Actor newOwner
+  --> Farmer farmer
+  
 }
 
-event MoveProductEvent {
+transaction CreateContract {
   --> Product product
-  --> Actor newOwner
+  --> Farmer farmer
+  --> Distributor distributor
+  --> Retailer retailActor
 }
+
+transaction statusUpdate {
+  --> Product product
+  --> Farmer farmer
+  --> Distributor distributor
+  --> Retailer retailActor
+}
+
+// event MoveProductEvent {
+//   --> Product product
+//   --> Actor newOwner
+// }
