@@ -70,10 +70,9 @@ asset Product identified by productId {
 
 asset Contract identified by contractId {
   o String contractId
-  --> Farmer farmer
-  --> Warehouseman warehouseman
-  --> Distributor distributor
-  --> Retailer retailer
+  --> Farmer farmer optional
+  --> Distributor distributor optional
+  --> Retailer retailer optional
   --> Product product
   o Double unitPrice
   o Double unitCount
@@ -93,10 +92,17 @@ transaction CreateProduct {
 }
 
 transaction CreateContract {
-  --> Product product
-  --> Farmer farmer
-  --> Distributor distributor
-  --> Retailer retailActor
+  // --> Product product
+  //--> Farmer farmer optional
+  // --> Distributor distributor optional
+  // --> Retailer retailer optional
+  o String farmerId optional
+  o String distributorId optional
+  o String retailerId optional
+  o String productId
+
+  o Double unitPrice
+  o Double unitCount
 }
 
 transaction statusUpdate {
