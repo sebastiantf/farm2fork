@@ -1,0 +1,59 @@
+Participants
+ Farmer
+ Warehouse Keeper
+ Distributor
+ Retailer
+ Consumer
+ 
+Participant Defns
+----------------------
+Farmer
+ ID
+ Name
+ Location
+ //Type
+ //Experience
+
+Warehouse Keeper
+ ID
+ Name
+ Location
+ Warehouse Name
+ //Capacity
+ //Temp
+ ///Rating
+
+Distributor
+ ID
+ Name
+ Location
+ ///Rating
+
+Retailer
+ ID
+ Name
+ Location
+
+//Consumer
+ Name
+
+Asset
+-------------
+ Product
+  ID
+  Name
+  Variety
+  Date Of Manufacture
+  Quantity
+  Pesticides {}
+  Price
+  Quality Rating
+  //Preservatives from any stage
+  //--Date Of Arrival Of each stage
+
+Transactions
+ Farmer --> Warehouse Keeper --> Distributor --> Retailer --> Consumer
+
+
+Permissions
+ Farmer --> Warehouse Keeper
