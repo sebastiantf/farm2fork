@@ -30,7 +30,7 @@ abstract participant Actor {
 
 participant Manufacturer identified by manufacturerId extends Actor {
   o String manufacturerId
-  }
+}
 
 participant Farmer identified by farmerId extends Actor {
   o String farmerId
@@ -69,12 +69,15 @@ asset Product identified by productId {
   o String harvestLocation
   o DateTime manufactured optional
   o DateTime expiry optional
-  // Date of each purchase is required - query
-  --> Product[] pesticides optional
-  --> Product[] fertilizers optional
-  --> Product[] seeds optional
+  o String[] pesticides
+  o String[] fertilizers
+  o String[] seeds
   o Integer rating
   --> Actor owner
+  // Date of each purchase is required - query
+  // --> Product[] pesticides optional
+  // --> Product[] fertilizers optional
+  // --> Product[] seeds optional
 }
 
 enum ProductType {
@@ -97,13 +100,13 @@ asset Contract identified by contractId {
   --> Distributor distributor optional
   --> Retailer retailer optional
   --> Shipper shipper optional
-  --> Product input
+  // --> Product input
   --> Product product
   o Double unitPrice
   o Double unitCount
   o String termsandcondtns
-  // o DateTime issuedDate
-  // o DateTime promisedDate
+  o DateTime issuedDate
+  o DateTime promisedDate
 }
 
 asset Shipment identified by shipmentId {
@@ -136,7 +139,12 @@ transaction CreateProduct {
   o ProductStatus productStatus
   o String harvestLocation
   o Integer daysForExpiry
+  o String[] pesticides
+  o String[] fertilizers
+  o String[] seeds
   o Integer rating
+  o String ownerType
+  o String ownerId
 
   // --> Product[] pesticides
   // --> Product[] fertilizers
@@ -148,21 +156,20 @@ transaction CreateContract {
   //--> Farmer farmer optional
   // --> Distributor distributor optional
   // --> Retailer retailer optional
-  o String manufacturerId optional
+  // o String manufacturerId optional
   o String warehousemanId optional
   o String farmerId optional
   o String distributorId optional
   o String retailerId optional
   o String shipperId optional
-  o String inputProductId
+  // o String inputProductId
   o String productId
   o Double unitPrice
   o Double unitCount
   o String termsandcondtns
 
   // o DateTime issuedDate
-  // o DateTime promisedDate
-
+  o Integer promisedNoOfDays
 }
 
 transaction CreateShipment {
@@ -172,14 +179,13 @@ transaction CreateShipment {
   o String modeOfTransport
   o String currentLocation
   o ShipmentStatus shipmentStatus default="CREATED"
-  o String ownerId
+  // o String ownerId
+  o String inCustodyOfType
   o String inCustodyOfId
 }
 
 transaction ShipmentStatusUpdate {
   --> Shipment shipment
-  o String ownerId
-  o String inCustodyOfId
   o ShipmentStatus shipmentStatus
 }
 
@@ -190,8 +196,12 @@ transaction ProductStatusUpdate {
 
 transaction ProductOwnerChange {
   --> Product product
+  o String ownerType
+  o String ownerId
 }
 
 transaction ShipmentInCustodyOfChange {
   --> Shipment shipment
+  o String inCustodyOfType
+  o String inCustodyOfId
 }
