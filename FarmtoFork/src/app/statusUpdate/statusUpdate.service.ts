@@ -15,7 +15,7 @@
 import { Injectable } from '@angular/core';
 import { DataService } from '../data.service';
 import { Observable } from 'rxjs/Observable';
-import { statusUpdate } from '../org.mahyco.farmtofork';
+// import { statusUpdate } from '../org.mahyco.farmtofork';
 import 'rxjs/Rx';
 
 // Can be injected into a constructor

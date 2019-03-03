@@ -63,10 +63,10 @@ describe('Starting tests for FarmtoFork', function() {
       });
     });
 
-    it('Product table should have 8 columns',() => {
+    it('Product table should have 15 columns',() => {
       page.navigateTo('/Product');
       element.all(by.css('.thead-cols th')).then(function(arr) {
-        expect(arr.length).toEqual(8); // Addition of 1 for 'Action' column
+        expect(arr.length).toEqual(15); // Addition of 1 for 'Action' column
       });
     });
   
@@ -81,14 +81,50 @@ describe('Starting tests for FarmtoFork', function() {
       });
     });
 
-    it('Contract table should have 8 columns',() => {
+    it('Contract table should have 13 columns',() => {
       page.navigateTo('/Contract');
       element.all(by.css('.thead-cols th')).then(function(arr) {
-        expect(arr.length).toEqual(8); // Addition of 1 for 'Action' column
+        expect(arr.length).toEqual(13); // Addition of 1 for 'Action' column
+      });
+    });
+  
+    it('Shipment component should be loadable',() => {
+      page.navigateTo('/Shipment');
+      browser.findElement(by.id('assetName'))
+      .then((assetName) => {
+        return assetName.getText();
+      })
+      .then((txt) => {
+        expect(txt).toBe('Shipment');
+      });
+    });
+
+    it('Shipment table should have 7 columns',() => {
+      page.navigateTo('/Shipment');
+      element.all(by.css('.thead-cols th')).then(function(arr) {
+        expect(arr.length).toEqual(7); // Addition of 1 for 'Action' column
       });
     });
   
 
+  
+    it('Manufacturer component should be loadable',() => {
+      page.navigateTo('/Manufacturer');
+      browser.findElement(by.id('participantName'))
+      .then((participantName) => {
+        return participantName.getText();
+      })
+      .then((txt) => {
+        expect(txt).toBe('Manufacturer');
+      });
+    });
+
+    it('Manufacturer table should have 5 columns',() => {
+      page.navigateTo('/Manufacturer');
+      element.all(by.css('.thead-cols th')).then(function(arr) {
+        expect(arr.length).toEqual(5); // Addition of 1 for 'Action' column
+      });
+    });
   
     it('Farmer component should be loadable',() => {
       page.navigateTo('/Farmer');
@@ -103,6 +139,24 @@ describe('Starting tests for FarmtoFork', function() {
 
     it('Farmer table should have 5 columns',() => {
       page.navigateTo('/Farmer');
+      element.all(by.css('.thead-cols th')).then(function(arr) {
+        expect(arr.length).toEqual(5); // Addition of 1 for 'Action' column
+      });
+    });
+  
+    it('Shipper component should be loadable',() => {
+      page.navigateTo('/Shipper');
+      browser.findElement(by.id('participantName'))
+      .then((participantName) => {
+        return participantName.getText();
+      })
+      .then((txt) => {
+        expect(txt).toBe('Shipper');
+      });
+    });
+
+    it('Shipper table should have 5 columns',() => {
+      page.navigateTo('/Shipper');
       element.all(by.css('.thead-cols th')).then(function(arr) {
         expect(arr.length).toEqual(5); // Addition of 1 for 'Action' column
       });
@@ -197,14 +251,58 @@ describe('Starting tests for FarmtoFork', function() {
       });
     });
   
-    it('statusUpdate component should be loadable',() => {
-      page.navigateTo('/statusUpdate');
+    it('CreateShipment component should be loadable',() => {
+      page.navigateTo('/CreateShipment');
       browser.findElement(by.id('transactionName'))
       .then((transactionName) => {
         return transactionName.getText();
       })
       .then((txt) => {
-        expect(txt).toBe('statusUpdate');
+        expect(txt).toBe('CreateShipment');
+      });
+    });
+  
+    it('ShipmentStatusUpdate component should be loadable',() => {
+      page.navigateTo('/ShipmentStatusUpdate');
+      browser.findElement(by.id('transactionName'))
+      .then((transactionName) => {
+        return transactionName.getText();
+      })
+      .then((txt) => {
+        expect(txt).toBe('ShipmentStatusUpdate');
+      });
+    });
+  
+    it('ProductStatusUpdate component should be loadable',() => {
+      page.navigateTo('/ProductStatusUpdate');
+      browser.findElement(by.id('transactionName'))
+      .then((transactionName) => {
+        return transactionName.getText();
+      })
+      .then((txt) => {
+        expect(txt).toBe('ProductStatusUpdate');
+      });
+    });
+  
+    it('ProductOwnerChange component should be loadable',() => {
+      page.navigateTo('/ProductOwnerChange');
+      browser.findElement(by.id('transactionName'))
+      .then((transactionName) => {
+        return transactionName.getText();
+      })
+      .then((txt) => {
+        expect(txt).toBe('ProductOwnerChange');
+      });
+    });
+  
+    it('ShipmentInCustodyOfChange component should be loadable',() => {
+      page.navigateTo('/ShipmentInCustodyOfChange');
+      browser.findElement(by.id('transactionName'))
+      .then((transactionName) => {
+        return transactionName.getText();
+      })
+      .then((txt) => {
+        expect(txt).toBe('ShipmentInCustodyOfChange');
       });
     });
   

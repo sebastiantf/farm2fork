@@ -26,13 +26,19 @@
               
               <li><a [routerLink]="['/Contract']">Contract</a></li>
               
+              <li><a [routerLink]="['/Shipment']">Shipment</a></li>
+              
             </ul>
         </li>
         <li class="dropdown active">
           <a class="dropdown-toggle" data-toggle="dropdown">Participants</a>
           <ul class="dropdown-menu scrollable-menu">
             
+            <li><a [routerLink]="['/Manufacturer']">Manufacturer</a></li>
+            
             <li><a [routerLink]="['/Farmer']">Farmer</a></li>
+            
+            <li><a [routerLink]="['/Shipper']">Shipper</a></li>
             
             <li><a [routerLink]="['/Warehouseman']">Warehouseman</a></li>
             
@@ -52,7 +58,15 @@
           
           <li><a [routerLink]="['/CreateContract']">CreateContract</a></li>
           
-          <li><a [routerLink]="['/statusUpdate']">statusUpdate</a></li>
+          <li><a [routerLink]="['/CreateShipment']">CreateShipment</a></li>
+          
+          <li><a [routerLink]="['/ShipmentStatusUpdate']">ShipmentStatusUpdate</a></li>
+          
+          <li><a [routerLink]="['/ProductStatusUpdate']">ProductStatusUpdate</a></li>
+          
+          <li><a [routerLink]="['/ProductOwnerChange']">ProductOwnerChange</a></li>
+          
+          <li><a [routerLink]="['/ShipmentInCustodyOfChange']">ShipmentInCustodyOfChange</a></li>
           
         </ul>
     </li>

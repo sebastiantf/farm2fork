@@ -1,0 +1,77 @@
+<!--
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+ http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <p class="network-name">farmtofork@0.0.1.bna</p>
+        <p class="navbar-brand">FarmtoFork2</p>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="dropdown active">
+            <a class="dropdown-toggle" data-toggle="dropdown">Assets</a>
+            <ul class="dropdown-menu scrollable-menu">
+              
+              <li><a [routerLink]="['/Product']">Product</a></li>
+              
+              <li><a [routerLink]="['/Contract']">Contract</a></li>
+              
+              <li><a [routerLink]="['/Shipment']">Shipment</a></li>
+              
+            </ul>
+        </li>
+        <li class="dropdown active">
+          <a class="dropdown-toggle" data-toggle="dropdown">Participants</a>
+          <ul class="dropdown-menu scrollable-menu">
+            
+            <li><a [routerLink]="['/Manufacturer']">Manufacturer</a></li>
+            
+            <li><a [routerLink]="['/Farmer']">Farmer</a></li>
+            
+            <li><a [routerLink]="['/Shipper']">Shipper</a></li>
+            
+            <li><a [routerLink]="['/Warehouseman']">Warehouseman</a></li>
+            
+            <li><a [routerLink]="['/Distributor']">Distributor</a></li>
+            
+            <li><a [routerLink]="['/Retailer']">Retailer</a></li>
+            
+          </ul>
+      </li>
+      <li class="dropdown active">
+        <a class="dropdown-toggle" data-toggle="dropdown">Transactions</a>
+        <ul class="dropdown-menu scrollable-menu">
+          
+          <li><a [routerLink]="['/DummyData']">DummyData</a></li>
+          
+          <li><a [routerLink]="['/CreateProduct']">CreateProduct</a></li>
+          
+          <li><a [routerLink]="['/CreateContract']">CreateContract</a></li>
+          
+          <li><a [routerLink]="['/CreateShipment']">CreateShipment</a></li>
+          
+          <li><a [routerLink]="['/ShipmentStatusUpdate']">ShipmentStatusUpdate</a></li>
+          
+          <li><a [routerLink]="['/ProductStatusUpdate']">ProductStatusUpdate</a></li>
+          
+          <li><a [routerLink]="['/ProductOwnerChange']">ProductOwnerChange</a></li>
+          
+          <li><a [routerLink]="['/ShipmentInCustodyOfChange']">ShipmentInCustodyOfChange</a></li>
+          
+        </ul>
+    </li>
+      </ul>
+    </div>
+  </nav>
+  
+  <router-outlet></router-outlet>
