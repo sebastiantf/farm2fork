@@ -19,6 +19,12 @@
 namespace org.mahyco.farmtofork
 
 
+concept Trace {
+    o DateTime timestamp
+    o String location
+    --> Actor owner
+}
+
 // Participants
 
 abstract participant Actor {
@@ -26,11 +32,12 @@ abstract participant Actor {
   o String firstName
   o String lastName
   o Double accountBalance 
+  o String actorLocation
 }
 
-participant Manufacturer identified by manufacturerId extends Actor {
-  o String manufacturerId
-}
+// participant Manufacturer identified by manufacturerId extends Actor {
+//   o String manufacturerId
+// }
 
 participant Farmer identified by farmerId extends Actor {
   o String farmerId
@@ -74,6 +81,8 @@ asset Product identified by productId {
   o String[] seeds
   o Integer rating
   --> Actor owner
+  o String location
+  o Trace[] trace
   // Date of each purchase is required - query
   // --> Product[] pesticides optional
   // --> Product[] fertilizers optional
@@ -94,7 +103,7 @@ enum ProductStatus {
 
 asset Contract identified by contractId {
   o String contractId
-  --> Manufacturer manufacturer optional
+  // --> Manufacturer manufacturer optional
   --> Warehouseman warehouseman optional
   --> Farmer farmer optional
   --> Distributor distributor optional
