@@ -41,4 +41,12 @@ export class AppComponent implements AfterViewInit {
       $(this).parent().parent().addClass('active');
     });
   }
+  
+  login(form: any): Promise<any> {
+
+
+    alert("login successfull");
+    return;
+
+  }
 }
