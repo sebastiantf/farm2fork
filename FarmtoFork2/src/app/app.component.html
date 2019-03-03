@@ -70,8 +70,52 @@
           
         </ul>
     </li>
+<ul class="nav navbar-nav navbar-right">
+	<li> <a (click)="resetForm()" type="button" class="btn btn-primary" data-toggle="modal" data-target="#addAssetModal"><span
+			 class="glyphicon glyphicon-user"></span></a></li>
+</ul>
       </ul>
     </div>
   </nav>
-  
+
+<div class="modal fade" id="addAssetModal" tabindex="-1" role="dialog" aria-labelledby="addAssetModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="addAssetModalLabel">Login</h4>
+				<p class="modal-intro">Enter the required values below.</p>
+			</div>
+			<form [formGroup]="myForm">
+				<div class="modal-body">
+
+
+					<div class="form-group text-left">
+						<label for="loginId">User Id</label>
+
+						<input formControlName="productId" type="text" class="form-control">
+
+					</div>
+
+
+
+
+					<div class="form-group text-left">
+						<label for="name">name</label>
+
+						<input formControlName="name" type="text" class="form-control">
+
+					</div>
+
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+					<button (click)="login(myForm);" type="submit" class="btn btn-success" data-dismiss="modal">Confirm</button>
+
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
   <router-outlet></router-outlet>
