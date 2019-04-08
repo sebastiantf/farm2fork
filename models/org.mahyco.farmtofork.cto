@@ -19,11 +19,11 @@
 namespace org.mahyco.farmtofork
 
 
-concept Trace {
-    o DateTime timestamp
-    o String location
-    --> Actor owner
-}
+// concept Trace {
+//     o DateTime timestamp
+//     o String location
+//     --> Actor owner
+// }
 
 // Participants
 
@@ -32,7 +32,7 @@ abstract participant Actor {
   o String firstName
   o String lastName
   o Double accountBalance 
-  o String actorLocation
+  // o String actorLocation
 }
 
 // participant Manufacturer identified by manufacturerId extends Actor {
@@ -81,8 +81,8 @@ asset Product identified by productId {
   o String[] seeds
   o Integer rating
   --> Actor owner
-  o String location
-  o Trace[] trace
+  // o String location
+  // o Trace[] trace
   // Date of each purchase is required - query
   // --> Product[] pesticides optional
   // --> Product[] fertilizers optional

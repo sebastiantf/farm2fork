@@ -1,0 +1,43 @@
+<!-- In app.component.html -->
+
+<!-- Add the timeline -->
+<vertical-timeline>
+
+  <!-- Add some cards to the timeline. It works with *ngFor too -->
+
+  <!-- If no value is passed for the date, the current time is used. -->
+  <vertical-timeline-card>
+    <h2>{{Date1}}</h2>
+    <h3>Thrissur</h3>
+    <h3>Farmer</h3>
+  </vertical-timeline-card>
+
+  <!-- 27 = new Date(2019, 9, 20, 14,34); -->
+  <vertical-timeline-card [dateValue]="27">
+    <h2>{{Date2}}</h2>
+    <h3>Kasargod</h3>
+    <h3>Warehouse</h3>
+  </vertical-timeline-card>
+
+  <!-- 28 = new Date(2019, 9, 20, 14,34); -->
+  <vertical-timeline-card [dateValue]="28">
+    <h2>{{Date3}}</h2>
+    <h3>Kollam</h3>
+    <h3>Distributor</h3>
+  </vertical-timeline-card>
+
+  <!-- 29 = new Date(2017, 9, 20, 14,34); -->
+  <vertical-timeline-card [dateValue]="29">
+    <h2>{{Date4}}</h2>
+    <h3>Karunagappally</h3>
+    <h3>Retailer</h3>
+  </vertical-timeline-card>
+
+  <!-- 30 = new Date(2017, 9, 20, 14,34); -->
+  <vertical-timeline-card [dateValue]="30">
+    <h2>{{Date5}}</h2>
+    <h3>Kozhikode</h3>
+    <h3>Consumer</h3>
+  </vertical-timeline-card>
+
+</vertical-timeline>
