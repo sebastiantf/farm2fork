@@ -1,3 +1,3 @@
-# farmtofork
+# TraceChain
 
-A Farm to Fork traceability solution
+A Blockchain-based supply chain traceability solution.
